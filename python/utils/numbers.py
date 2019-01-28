@@ -2,6 +2,10 @@ from math import sqrt, floor
 def fib(n):
     return floor(((1+sqrt(5))**n-(1-sqrt(5))**n)/(2**n*sqrt(5)))
 
+def is_palindrome(n):
+    return n == int(str(n)[::-1])
+
+
 class Primes:
     def upto(n):
         if n<=2:
