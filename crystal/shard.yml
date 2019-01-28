@@ -1,0 +1,13 @@
+name: euler.cr
+version: 0.1.0
+
+authors:
+  - Marcelo Risoli<marcelo@risoli.co>
+
+crystal: 0.27.0
+
+license: MIT
+
+dependencies:
+  primes:
+    github: mrisoli/primes

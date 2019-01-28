@@ -1,0 +1,6 @@
+version: 1.0
+shards:
+  primes:
+    github: mrisoli/primes
+    commit: d4d67e216e557b70f9a283621a3cce39b3da409b
+
