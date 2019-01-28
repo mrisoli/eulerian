@@ -1,10 +1,12 @@
-from math import sqrt, floor
+from math import floor, gcd, sqrt
 def fib(n):
     return floor(((1+sqrt(5))**n-(1-sqrt(5))**n)/(2**n*sqrt(5)))
 
 def is_palindrome(n):
     return n == int(str(n)[::-1])
 
+def lcm(a, b):
+    return a * b // gcd(a, b)
 
 class Primes:
     def upto(n):
