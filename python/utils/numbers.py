@@ -18,3 +18,18 @@ class Primes:
                 sieve[(x*y)]=False
 
         return [2]+[i for i in range(3,n,2) if sieve[i]]
+    def first(n):
+        if n == 0:
+            return []
+        primes = [2]
+
+        num = 3
+        while len(primes) != n:
+            for i in primes:
+                if num % i == 0:
+                    break
+                elif i > sqrt(num):
+                    primes.append(num)
+                    break
+            num += 2
+        return primes
