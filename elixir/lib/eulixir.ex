@@ -1,13 +1,6 @@
 defmodule Eulixir do
-  defp measure(function) do
-    function
-    |> :timer.tc
-    |> elem(0)
-    |> Kernel./(1_000_000)
-  end
-
   def run(n) do
-    fn -> apply(:"Elixir.Prob#{n}", :run, []) end |> measure |> IO.puts
+    apply(:"Elixir.Prob#{n}", :run, [])
   end
 
   def run do
