@@ -8,6 +8,15 @@ def is_palindrome(n):
 def lcm(a, b):
     return a * b // gcd(a, b)
 
+def triangle(n):
+    return (n * (n + 1))//2
+
+def num_divisors(n):
+    divisors = 0
+    for i in range(1, floor(sqrt(n))):
+        if n % i == 0: divisors += 2
+    return divisors
+
 class Primes:
     def upto(n):
         if n<=2:
