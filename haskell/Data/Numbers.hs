@@ -1,8 +1,15 @@
 module Data.Numbers
-( fib
+( fac
+, fib
+, digits
 , isPalindrome
+, eulerTotient
+, triangle
 , polygonal
 ) where
+
+fac :: Int -> Int
+fac = product . flip take [1..]
 
 fib :: Integer -> Integer
 fib 0 = 0
@@ -15,25 +22,31 @@ isPalindrome n = n  == reverseInt n
 reverseInt :: Integer -> Integer
 reverseInt = read . reverse . show
 
-triangle :: Integer -> Integer
+eulerTotient :: Integer -> Int
+eulerTotient n = sum [1 | 1<-gcd n<$>[1..n]]
+
+digits :: Int -> [Int]
+digits = map (read . (:[])) . show
+
+triangle :: Int -> Int
 triangle n = div (n * (n + 1)) 2
 
-square :: Integer -> Integer
+square :: Int -> Int
 square n = n * n
 
-pentagonal :: Integer -> Integer
+pentagonal :: Int -> Int
 pentagonal n = div (n * ((3 * n) - 1))  2
 
-hexagonal :: Integer -> Integer
+hexagonal :: Int -> Int
 hexagonal n = n * ((2 * n) - 1)
 
-heptagonal :: Integer -> Integer
+heptagonal :: Int -> Int
 heptagonal n = div (n * ((5 * n) - 3)) 2
 
-octagonal :: Integer -> Integer
+octagonal :: Int -> Int
 octagonal n = n * ((3 * n) - 2)
 
-polygonal:: Integer -> Integer -> Integer
+polygonal:: Int -> Int -> Int
 polygonal 3 = triangle
 polygonal 4 = square
 polygonal 5 = pentagonal

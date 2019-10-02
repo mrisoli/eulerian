@@ -1,8 +1,5 @@
 import Data.Numbers (polygonal)
 import qualified Data.Map.Strict as Map
-import Debug.Trace
-import Data.List (find, maximumBy, nub)
-import Data.Ord (comparing)
 
 type Pair = (Integer, Integer)
 type LinkedPairs = Map.Map Pair [Pair]
