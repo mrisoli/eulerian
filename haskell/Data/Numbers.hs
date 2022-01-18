@@ -8,6 +8,8 @@ module Data.Numbers
 , polygonal
 ) where
 
+import Data.Char (digitToInt)
+
 fac :: Int -> Int
 fac = product . flip take [1..]
 
@@ -25,8 +27,8 @@ reverseInt = read . reverse . show
 eulerTotient :: Integer -> Int
 eulerTotient n = sum [1 | 1<-gcd n<$>[1..n]]
 
-digits :: Int -> [Int]
-digits = map (read . (:[])) . show
+digits :: [Char] -> [Int]
+digits = map digitToInt
 
 triangle :: Int -> Int
 triangle n = div (n * (n + 1)) 2
